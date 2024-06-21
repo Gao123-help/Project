@@ -7,3 +7,5 @@ print("hello world!")
 
 def function():
     return 11
+def function2():
+    return 13
