@@ -36,4 +36,5 @@ del和pop的区别：pop会返回被删除的元素值，pop默认删除最后�
 name_list =["小明","小王","小明"]
 del name_list[0]
 print(name_list)
+# list.sort默认从小到大排序，要想从大到小则sort(reverse=True)
 
