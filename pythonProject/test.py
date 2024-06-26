@@ -30,4 +30,10 @@ slist = {"python", "linux", "C++"}
 print("-".join(slist))
 # 首字母大写：str.title()
 # 字符串的判断语句：startwith()\endwith()
+"""
+del和pop的区别：pop会返回被删除的元素值，pop默认删除最后一个元素
+"""
+name_list =["小明","小王","小明"]
+del name_list[0]
+print(name_list)
 
