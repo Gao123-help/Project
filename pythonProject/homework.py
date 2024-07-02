@@ -201,13 +201,25 @@ def calculate(tag: int) -> list:
 #         strresult += " "
 # print(strresult.title())
 
-order = "iPhone, 2, 6999.99, Macbook Pro, 1, 12999.99, iPad, 3, 3299.99"
-list1 = order.split(",")
-total_cost = 0
-print(list1)
-i = 0
-while i + 3 < len(list1):
-    total_cost = int(list1[i + 1]) * float(list1[i + 2])
-    i += 3
+# order = "iPhone, 2, 6999.99, Macbook Pro, 1, 12999.99, iPad, 3, 3299.99"
+# list1 = order.split(",")
+# total_cost = 0
+# print(list1)
+# i = 0
+# while i + 3 < len(list1):
+#     total_cost = int(list1[i + 1]) * float(list1[i + 2])
+#     i += 3
+#
+# print(total_cost)
 
-print(total_cost)
+# python变量的引用关系
+# 不可变数据类型：数字、字符串、元组；可变：列表、字典
+a = " abcdefg"
+print(f"地址a：{id(a)}")
+
+print(f"地址a：{id(a)}")
+a = [1, 11, 3, 4]
+b = a
+b[1] = 12
+print(f"地址a：{id(a)},a:{a}")
+
