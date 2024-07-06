@@ -214,12 +214,292 @@ def calculate(tag: int) -> list:
 
 # python变量的引用关系
 # 不可变数据类型：数字、字符串、元组；可变：列表、字典
-a = " abcdefg"
-print(f"地址a：{id(a)}")
+# a = " abcdefg"
+# print(f"地址a：{id(a)}")
+#
+# print(f"地址a：{id(a)}")
+# a = [1, 11, 3, 4]
+# b = a
+# b[1] = 12
+# print(f"地址a：{id(a)},a:{a}")
 
-print(f"地址a：{id(a)}")
-a = [1, 11, 3, 4]
-b = a
-b[1] = 12
-print(f"地址a：{id(a)},a:{a}")
 
+"""
+
+ 已知有一个购物车商品列表 cart = [("Apple", 2), ("Banana", 3), ("Orange", 4), ("Pear", 1)]，其中每个元组表示一种商品及其数量。请使用列表推导式编写代码，实现以下功能：
+
+    创建一个新列表 cart_items，其中仅包含购物车中的商品名称（即去除商品数量信息）。
+    创建一个新列表 expensive_items，其中仅包含购物车商品数量>=3的商品名称。
+    将购物车中每个商品的数量加倍，并创建一个新的购物车列表 cart_doubled。
+
+请编写上述要求的代码，并输出最终的列表 cart_items、expensive_items 和 cart_doubled。
+
+"""
+
+# cart = [("Apple", 2), ("Banana", 3), ("Orange", 4), ("Pear", 1)]
+# cart_items = [i[0] for i in cart]
+# expensive_items = [i[1] for i in cart if i[1] >= 3]
+# print(f"cart_items:{cart_items}")
+# print(f"expensive_items:{expensive_items}")
+#
+# li = [1, 2, 4, None, 5, None]
+# li1 = [i for i in li if i != None]
+# new_li = [num for num in li if str(num).isdigit()]
+# print(li1)
+
+#
+# def findall(s, sun_str: str):
+#     result_list = []
+#     len1 = len(sun_str)
+#     for i in range(len(s)):
+#         if s[i:i + len1] == sun_str:
+#             result_list.append(i)
+#     return tuple(result_list)
+#
+#
+# s = findall("helloworldhellopythonhelloc++hellojava", "hello")
+# print(s)
+
+global_var = 100
+
+"""
+请编写一个函数 print_info，接受以下参数：
+    name：表示一个人的姓名（必须）
+    age：表示一个人的年龄（必须）
+    city：表示一个人所在的城市（可选，默认值为 "未知"）
+    gender：表示一个人的性别（可选，默认值为 "未知"）
+    函数内部根据提供的参数打印人物信息，输出格式如下：
+    姓名：xxx
+    年龄：xxx
+    城市：xxx
+    性别：xxx
+可变长参数
+"""
+
+# def print_info(**vardict):
+#     for i in vardict.items():
+#         print("姓名:" if i[0] == 'name' else "年龄:" if i[0] == "age" else "城市:" if i[0] == "city" else "性别:")
+#
+#
+# print_info(name="xiaoming", age=17, city="hangzhou", gender="male")
+
+"""
+假设你正在开发一个餐厅点餐系统，需要编写 Python 代码来处理订单信息和菜品库存。请完成以下要求：
+
+    创建一个函数place_order(table_number, *dishes, serving_time=None, **requirements)，用于记录订单信息和处理菜品库存。
+        参数 table_number 是位置参数，表示桌号。
+        参数 dishes 是不定长参数，表示顾客所点的菜品列表。
+        参数 serving_time 是关键字参数，表示就餐时间，默认为 None。
+        参数 requirements 是关键字参数，表示顾客对菜品的特殊要求。
+    在函数内部，根据菜品的库存数量和要求，判断是否能够满足顾客的点餐需求。
+    如果库存充足且满足要求，打印订单信息，并将对应菜品的库存数量减少；如果库存不足或不能满足要求，打印相应提示信息。
+    在主程序中，调用函数 place_order() 并传入相应的参数值，模拟一次实际点餐操作，并观察输出结果。
+
+请编写上述要求的代码，并输出订单信息。
+
+模拟菜品库存如下
+
+menu = {
+    '鱼香肉丝': 5,
+    '宫保鸡丁': 3,
+    '糖醋排骨': 0,
+    '回锅肉': 4,
+    '水煮鱼': 2
+}
+
+传递参数方式如下：
+
+place_order(10, '鱼香肉丝', '宫保鸡丁', '糖醋排骨', '回锅肉', '水煮鱼', serving_time='19:00', 鱼香肉丝='少辣', 回锅肉='加蒜')
+
+最终呈现结果为：
+
+# 桌号：10
+# 所点菜品：
+#   - 鱼香肉丝
+#     - 特殊要求：少辣
+#   - 宫保鸡丁
+#   - 糖醋排骨 点餐失败，该菜品不存在或库存不足
+#   - 回锅肉
+#     - 特殊要求：加蒜
+#   - 水煮鱼
+# 就餐时间：19:00
+
+# 提示：
+def demo(**requirements):
+    if '鱼香肉丝' in requirements:
+        print(requirements['鱼香肉丝'])
+demo(鱼香肉丝='少辣')
+"""
+menu = {
+    '鱼香肉丝': 5,
+    '宫保鸡丁': 3,
+    '糖醋排骨': 0,
+    '回锅肉': 4,
+    '水煮鱼': 2
+}
+
+
+def print_menu():
+    print(f'鱼香肉丝:{5}')
+    print(f'宫保鸡丁:{3}')
+    print(f'宫保鸡丁:{0}')
+    print(f'回锅肉:{4}')
+    print(f'水煮鱼:{2}')
+
+
+# # 判断菜品是否在菜单中，若在，库存减少1
+# def existmenu(dishes: tuple, requirements: dict):
+#     count = 0
+#     for i in dishes:
+#         # 若在菜单中，且有库存则数量减一
+#         if i in menu.keys() and menu[i] > 0:
+#             menu[i] -= 1
+#         else:
+#             count += 1
+#             requirements[i] = "点菜失败，该菜品库存不足或不存在"
+#     if count == len(dishes):
+#         print("所有菜品都已售罄！")
+#         return False
+#     return True
+#
+#
+# # 打印每个菜品的拼接信息，菜品名称和对应的特殊性要求
+# def print_perfood(dishes: tuple, requirements: dict):
+#     for i in dishes:
+#         print(f"  -{i}")
+#         if i in requirements.keys():
+#             print(f"   -{requirements[i]}")
+#
+#
+# def place_order(table_number, *dishes, serving_time=None, **requirements):
+#     print("---------欢迎点菜--------")
+#     if existmenu(dishes,requirements):  # 点菜成功
+#         print(f"桌号：{table_number}")
+#         print("所有菜品：")
+#         print_perfood(dishes, requirements)
+#         print(f"就餐时间：{serving_time}")
+#
+#
+# place_order(10, '鱼香肉丝', '宫保鸡丁', '糖醋排骨', '回锅肉', '水煮鱼', serving_time='19:00', 鱼香肉丝='少辣',
+#             回锅肉='加蒜')
+
+"""
+请编写两个函数，实现以下功能：
+
+    第一个函数名为 calculate_rectangle_area，接受两个参数 length 和 width，分别为矩形的长度和宽度。
+        函数内部计算并返回矩形的面积。
+    第二个函数名为 calculate_composite_area，接受两个参数 a 和 b，分别为两个矩形的长度和宽度。
+        函数内部调用 calculate_rectangle_area 函数，计算两个矩形的面积之和，并返回结果。
+    调用函数 calculate_composite_area，将矩形1的长度为 3，宽度为 4，矩形2的长度为 5，宽度为 6，作为参数传入，并输出结果。
+
+
+"""
+
+# def calculate_rectangle_area(length, width: float):
+#     return length * width
+#
+#
+# def calculate_composite_area(a, b: tuple):
+#     sum1 = 0
+#     for i in range(len(a)):
+#         sum1 += calculate_rectangle_area(a[i], b[i])
+#     print(sum1)
+#
+#
+# calculate_composite_area((3, 5), (4, 6))
+
+"""
+请编写一个程序，定义一个元组 student，包含学生的信息，包括姓名、年龄和性别。
+然后，使用元组拆包的方式将学生的信息提取出来，并分别存储到对应的变量中。最后，分别输出学生的姓名、年龄和性别。
+"""
+# student = ("小明", 20, "男")
+# name, age, gender = student
+# print(f"姓名：{name}")
+# print(f"年龄：{age}")
+# print(f"性别：{gender}")
+"""
+你正在开发一个图书管理系统，需要编写 Python 代码来处理图书信息。
+
+已知有一个图书列表 books，记录图书编号(book_id)和书名(book_name)，一个作者列表，记录作者名称(author)和图书编号(book_id)。
+请使用函数嵌套调用的方式编写代码，实现以下功能：
+
+    创建一个函数 search_book_by_author(authors, author)，根据作者名称获取其编写的所有图书名
+    创建一个函数 get_book_info(books, book_id)，根据图书编号获取图书的名称。
+    在 search_book_by_author(authors, author) 函数内部，通过调用 get_book_info(books, book_id) 函数来获取每本图书的图书名。
+    在主程序中调用 search_book_by_author(authors, author) 函数，并输出符合要求的图书名称。
+
+请编写上述要求的代码，并输出符合要求的图书名称。
+"""
+
+# authors = [
+#     {
+#         "book_id": 1,
+#         "author": "张三"
+#     },
+#     {
+#         "book_id": 2,
+#         "author": "李四"
+#     },
+#     {
+#         "book_id": 3,
+#         "author": "张三"
+#     },
+#     {
+#         "book_id": 4,
+#         "author": "王五"
+#     },
+#
+# ]
+# books = [
+#     {
+#         "book_id": 1,
+#         "book_name": "Python编程入门",
+#     },
+#     {
+#         "book_id": 2,
+#         "book_name": "Java从入门到精通",
+#     },
+#     {
+#         "book_id": 3,
+#         "book_name": "数据结构与算法",
+#     },
+#     {
+#         "book_id": 4,
+#         "book_name": "深入理解计算机系统",
+#     }
+# ]
+#
+#
+# def search_book_by_author(authors: list, author):  # ，根据作者名称获取其编写的所有图书名
+#     for i in authors:
+#         if i["author"] == author:
+#             print(get_book_info(books, i["book_id"]))
+#
+#
+# def get_book_info(books: list, book_id):
+#     for i in books:
+#         if i["book_id"] == book_id:
+#             return i["book_name"]
+#
+#
+# search_book_by_author(authors, "张三")
+
+# def sum_digits(n):
+#     if n % 10 == n:
+#         return n
+#     return sum_digits(int(n / 10)) + (n % 10)
+#
+#
+# print(sum_digits(12345))
+# num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# num1 = list(filter(lambda a: a % 2 != 0, num))
+# print(num1)
+
+func = lambda s: s.upper()
+print(func("hello py"))
+
+num = ["xiaoming", "zhangsan", "lala", "orange"]
+print(sorted(num, key=lambda i: len(i)))
+
+is_even = lambda i: i % 2 == 0
+print(is_even(17))
