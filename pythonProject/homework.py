@@ -495,11 +495,13 @@ def print_menu():
 # num1 = list(filter(lambda a: a % 2 != 0, num))
 # print(num1)
 
-func = lambda s: s.upper()
-print(func("hello py"))
+# func = lambda s: s.upper()
+# print(func("hello py"))
+#
+# num = ["xiaoming", "zhangsan", "lala", "orange"]
+# print(sorted(num, key=lambda i: len(i)))
+#
+# is_even = lambda i: i % 2 == 0
+# print(is_even(17))
 
-num = ["xiaoming", "zhangsan", "lala", "orange"]
-print(sorted(num, key=lambda i: len(i)))
 
-is_even = lambda i: i % 2 == 0
-print(is_even(17))
