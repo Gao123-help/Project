@@ -113,24 +113,56 @@ import time
 # print(recv_data)
 # client.close()
 
+
+
+#
+# # 原始列表
+# original_list = [1, 2, [3, 4], 5]
+#
+# # 浅拷贝
+# shallow_copy = copy.copy(original_list)
+#
+# # 修改浅拷贝中的嵌套列表
+# shallow_copy[2][0] = 'A'
+#
+# # 深拷贝
+# deep_copy = copy.deepcopy(original_list)
+#
+# # 修改深拷贝中的嵌套列表
+# deep_copy[2][1] = 'B'
+#
+# # 输出结果
+# print("原始列表:", original_list)
+# print("浅拷贝:", shallow_copy)
+# print("深拷贝:", deep_copy)
 import copy
+import re
+"""
+请编写一个正则表达式，用于匹配符合以下要求的手机号码：
 
-# 原始列表
-original_list = [1, 2, [3, 4], 5]
+    11位数字
+    第一位为1
+    第二位为3、4、5、6、7、8、9之一
 
-# 浅拷贝
-shallow_copy = copy.copy(original_list)
 
-# 修改浅拷贝中的嵌套列表
-shallow_copy[2][0] = 'A'
+"""
 
-# 深拷贝
-deep_copy = copy.deepcopy(original_list)
+# rules = r'1[3456789]\d{9}'
+# phonenumber = '19987966646'
+# strtest = re.match(rules,phonenumber)
+# print(strtest.group())
 
-# 修改深拷贝中的嵌套列表
-deep_copy[2][1] = 'B'
+"""
+编写一个正则表达式，用于匹配符合以下要求的字符串：
 
-# 输出结果
-print("原始列表:", original_list)
-print("浅拷贝:", shallow_copy)
-print("深拷贝:", deep_copy)
+    字符串由四个大写字母组成
+    第一个字母和最后一个字母相同
+    第二个字母和倒数第二个字母相同
+
+请给出你的正则表达式，并编写一个程序验证它的正确性
+
+"""
+# result = re.match(r'[A-Z][A-Z](\w)(\w)\2\1','ABBA')
+# print(result.group(2))
+
+'''<tr>\n<th width="12%">排名</th>\n<th width="36%">品牌</th>\n<th width="18%">1月销量</th>\n<th width="18%">全年销量</th>\n<th width="16%">最佳车型</th>\n</tr>'''

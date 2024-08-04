@@ -15,7 +15,10 @@ import re
 
 # 正则表达式匹配多个字符,只能匹配连续的
 str2 = '123adnj3nndj2'
-result = re.match('\d{3}',str2)
+result = re.match('\d{3}', str2)
 print(result.group())
 
 # 复杂的正则表达式匹配，可以使用正则工具箱辅助生成正则表达式，网上搜索正则工具箱
+strtemp = '123456@qq.com1111'
+result = re.match('\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}', strtemp)
+print(result.group())
